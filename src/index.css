@@ -1,13 +1,29 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+body{
+  margin-top: 15px;
+}
+.Editorial {
+  background-color:  green;
+
+}
+.Webinar {
+  background-color:gray;
+
+}
+.OfGuals {
+  background-color: red;
+}
+.Siber{
+  background-color: hotpink;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.Tomorrow {
+ color:  lightblue;
+
+}
+.Today {
+  color:green;
+
+}
+.Monday {
+ color: black;
 }
