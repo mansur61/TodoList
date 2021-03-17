@@ -10,14 +10,14 @@ const TaskLists = ({section,tasks,kategories,delMetod,whereTasks}) =>{
   
     if(section.length > 0){
         return section.map(sect=>{ 
-            return <div key={sect.id} style={{fontWeight:"bold"}}>{sect.selectName} 
+            return <div key={sect.id} style={{fontWeight:"bold"}}> {sect.selectName} 
+          
             {
              tasks.map(task=>{
             if(tasks.length > 0){
                 if(sect.id === task.sectionID){
                    return kategories.map(kate=>{ 
                     if(kate.id === task.kategoriID){
-
                         return whereTasks.map(wTasks =>{
                             if(wTasks.id === task.whrID){
                                 return <Task taskName={task.taskName} key={task.id} 
@@ -34,14 +34,14 @@ const TaskLists = ({section,tasks,kategories,delMetod,whereTasks}) =>{
             })
         
         }
-           
-        </div>
+            </div>      
+        
         })
 
        
     }else{
         return(
-            <div>Mansur</div>
+            <div>Section ALANI Boş.</div>
      
          )
          

@@ -13,6 +13,7 @@ class AddSection extends React.Component{
     sectionChangeHandler =  (e) =>{
         this.setState({secName:e.target.value})
     }
+    
     render(){
         return(
             <form onSubmit={this.submitHandler}>
