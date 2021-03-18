@@ -1,21 +1,27 @@
 body{
   margin-top: 15px;
+  background-color:white;
 }
 .Editorial {
-  background-color:  green;
+  background-color:  lightblue;
 
 }
-.Webinar {
-  background-color:gray;
+.Website {
+  background-color:palevioletred;
 
 }
 .OfGuals {
-  background-color: red;
+  background-color: plum;
 }
-.Siber{
-  background-color: hotpink;
+.Sales{
+  background-color: lightgreen; 
 }
-
+.Mocolo{
+  background-color: orange; 
+}
+.Recruitting{
+  background-color: lightseagreen; 
+}
 .Tomorrow {
  color:  lightblue;
 

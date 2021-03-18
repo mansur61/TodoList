@@ -3,15 +3,22 @@ import Task from './Task'
 
 const TaskLists = ({section,tasks,kategories,delMetod,whereTasks}) =>{
    // console.log("section ->",section," - tasks ->",tasks," - kategories ->",kategories)
-   console.log("tasks ->",tasks)
+  /* console.log("tasks ->",tasks)
    console.log("section ->",section)
    console.log("kategories ->",kategories)
    console.log("whereTasks ->",whereTasks)
-  
+    */
+    const statechangeImage = (e) =>{
+        console.log(e)
+    }
     if(section.length > 0){
         return section.map(sect=>{ 
-            return <div key={sect.id} style={{fontWeight:"bold"}}> {sect.selectName} 
-          
+            return <div key={sect.id} style={{fontWeight:"bold"}}>
+                <br />  
+              <img  src={"img/ac.png"}  alt=""
+                style={{width:"20px", height:"25px",borderRadius:5}}
+                    onClick={()=>statechangeImage(sect.id)}
+                /> {sect.selectName}
             {
              tasks.map(task=>{
             if(tasks.length > 0){
@@ -23,7 +30,9 @@ const TaskLists = ({section,tasks,kategories,delMetod,whereTasks}) =>{
                                 return <Task taskName={task.taskName} key={task.id} 
                                     kategoriName={kate.katName}
                                     whrName={wTasks.whrName}
-                                    method={()=>delMetod(task.id)} />
+                                    sectID = {sect.id}   
+                                   //method={()=>delMetod(task.id)} 
+                                    />
                             }
                         })
                        

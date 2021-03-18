@@ -10,10 +10,15 @@ class App extends React.Component {
     cSectionID:1,
     wTimeID:1,
     tasks: [
-      {taskName:"1. çalışma",kategoriID:1,id:1,sectionID:1,whrID:1},
-      {taskName:"2. çalışma",kategoriID:2,id:2,sectionID:2,whrID:2},
-      {taskName:"3. çalışma",kategoriID:2,id:3,sectionID:2,whrID:2},
-      {taskName:"4. çalışma",kategoriID:3,id:4,sectionID:3,whrID:3}
+      {taskName:"Quarterly newsletter",kategoriID:2,id:1,sectionID:1,whrID:1},
+      {taskName:"Recruiting blog post",kategoriID:2,id:2,sectionID:2,whrID:2},
+      {taskName:"Mobile app launch",kategoriID:3,id:3,sectionID:2,whrID:2},
+      {taskName:"Interview John H.",kategoriID:4,id:4,sectionID:2,whrID:2},
+      {taskName:"Submit updates to mobile starefonts",kategoriID:5,id:4,sectionID:2,whrID:2},
+      {taskName:"Schedule meeting with Alex",kategoriID:1,id:4,sectionID:3,whrID:3},
+      {taskName:"Homepage refresh",kategoriID:6,id:4,sectionID:3,whrID:4},
+      {taskName:"Onboard new Salse team members",kategoriID:7,id:4,sectionID:3,whrID:5},
+      {taskName:"Review editorial calendar",kategoriID:2,id:4,sectionID:3,whrID:6}
       
     ],
     selections: [
@@ -22,10 +27,15 @@ class App extends React.Component {
       {selectName:"Upcoming",id:3}
     ],
     kategories: [
-      {katName:"Editorial",id:1},
-      {katName:"OfGuals",id:2},
-      {katName:"Webinar",id:3},
-      {katName:"Siber",id:4}
+      {katName:"",id:1},
+      {katName:"Editorial",id:2},
+      {katName:"OfGuals",id:3},
+      {katName:"Recruitting",id:4},
+      {katName:"Mocolo",id:5},
+      {katName:"Website",id:6},     
+      {katName:"Sales",id:7}
+      
+     
     ],
     whereTasks: [
       {whrName:"Tomorrow",id:1,sectionID:1},
@@ -38,7 +48,7 @@ class App extends React.Component {
 
   }
   addTaskMethod = (taskName,sectID,katID,whrID) =>{
-    console.log("App Modüünde -> ",taskName," -- ",sectID,"--",katID,"--",whrID);
+    //console.log("App Modüünde -> ",taskName," -- ",sectID,"--",katID,"--",whrID);
     if(taskName !== ""){
       let idAl = this.state.Tidx +1;
       let task = {
@@ -101,13 +111,14 @@ class App extends React.Component {
   }
   render(){
     return (
-      <div className="container-fluid">   
-        <div className="row">
+      <div className="container" style={{backgroundColor:"white"}}>   
+        <div className="row" >
             <div className="col-md-12"> 
 
-                <div className="row">
+                <div className="row"  style={{margin:"0px 120px",border:"1px solid lightgray",
+              backgroundColor:"white", borderRadius:"10px"}}>
 
-                  <div className="col-md-5" style={{borderRight:"1px solid gray"}}>
+                  <div className="col-md-6" style={{borderRight:"1px solid gray"}}>
                       <AddTask addTaskMethod = {this.addTaskMethod} 
                     section = {this.state.selections} 
                     tasks = {this.state.tasks}
@@ -119,15 +130,11 @@ class App extends React.Component {
                     />
                   </div>
 
-                  <div className="col-md-2">
+                  <div className="col-md-4">
                    <AddSection addSectionMethod={this.addSectionMethod}/>
                 </div>
-
-              </div>
-         
-           </div>  
-
-            <div className="col-md-6">      
+               
+                <div className="col-md-12"  style={{borderTop:"1px solid lightgray"}}>      
               <TaskLists  section = {this.state.selections} 
               tasks = {this.state.tasks} kategories = {this.state.kategories}
               delMetod={this.deleteMetod}
@@ -135,8 +142,14 @@ class App extends React.Component {
              
               />           
             </div>
+              </div>
+         
+           </div>  
+
+            
 
           </div>
+          <br/>
       </div>
      
     );

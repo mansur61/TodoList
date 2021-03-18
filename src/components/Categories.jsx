@@ -9,7 +9,7 @@ const Categories = ({kategories,kategoriChangeHandler}) =>{
 
         <select className="form-control" name ="state" id="state"
             onChange={changeHandler} >
-                
+                 <option>Aşağıdan Seçiniz</option>
                 { kategories.map(kat =>{
                 
                     return <option value={kat.id}
